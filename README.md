@@ -6,20 +6,20 @@ Let's leave this planet and travel to Mars! In this challenge information is scr
 Data is collected from the following URLs
 
 ### NASA Mars News
-* Collected Data: latest News Title and Paragraph Test
-https://redplanetscience.com/
+* Collected Data: latest News Title and Paragraph Text
+* Collect From: https://redplanetscience.com/
 
 ### JPL Mars Space Images - Featured Image
 * Collected Data: Image url for the current Featured Mars Image
-https://spaceimages-mars.com/
+* https://spaceimages-mars.com/
 
 ### Mars Facts
 * Collected Data: Table containing facts about the planet including Diameter, Mass, etc.
-https://galaxyfacts-mars.com/
+* Collect From: https://galaxyfacts-mars.com/
 
 ### Mars Hemispheres
 * Collected Data: High resolution images for each of Mar's hemispheres
-https://marshemispheres.com/
+* Collect From: https://marshemispheres.com/
 
 
 ## Mission to Mars - Part Two
@@ -32,5 +32,5 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
 * Create a template HTML file called index.html that will take the mars data dictionary and display all of the data in the appropriate HTML elements. Use the following as a guide for what the final product should look like, but feel free to create your own design.
 
 ## Output for Web Scraping Challenge
-![MissionToMars](Images/MissoionToMars.png)
-![MissionToMars1](Images/MissoionToMars1.png)
+![MissionToMars](Images/MissionToMars.png)
+![MissionToMars1](Images/MissionToMars1.png)
