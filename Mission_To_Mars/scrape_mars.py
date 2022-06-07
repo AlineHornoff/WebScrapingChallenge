@@ -4,17 +4,11 @@ from splinter import Browser
 from bs4 import BeautifulSoup as bs
 from webdriver_manager.chrome import ChromeDriverManager
 import time
-#import requests
 
 # Define initial browser for scrape
-def init_browser():
+def scrape():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
-
-# Define scrape
-def scrape():
-    browser = init_browser()
-
 
     # ***********************************
     # Mars News Scrape
@@ -23,7 +17,7 @@ def scrape():
     MarsNews_URL = "https://redplanetscience.com/"
 
     # Print Scarping Mars News
-    print("Scraping Mars News...")
+    #print("Scraping Mars News...")
 
     # Visit Mars News URL
     browser.visit(MarsNews_URL)
@@ -39,8 +33,8 @@ def scrape():
     # Find and save Praragraph text under <div> tag with class='article_teaser_body'
     NewsParagraph = soup.find('div', class_='article_teaser_body').text
 
-    # Print Mars News: Scraping complete!
-    print("Mars New: Scraping complete!")
+    # Close the browser after scraping
+    browser.quit()
 
 
     # ****************************************
@@ -48,7 +42,10 @@ def scrape():
     # ****************************************
 
     # Visit JPL Featured Space Image URL
-    JPLimages_URL = 'https://spaceimages-mars.com/'
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser('chrome', **executable_path, headless=False)
+
+    JPLimages_URL = "https://spaceimages-mars.com/"
     browser.visit(JPLimages_URL)
     time.sleep(1)   
 
@@ -71,7 +68,7 @@ def scrape():
     # ****************************
 
     # Visit Mars Facts URL
-    MarsFacts_URL = 'https://galaxyfacts-mars.com/'
+    MarsFacts_URL = "https://galaxyfacts-mars.com/"
 
     # Scrape table from URL using pandas
     FactsTable = pd.read_html(MarsFacts_URL)
@@ -92,6 +89,9 @@ def scrape():
    # **************************************
 
    # Visit Mars Hemisphere URL
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser('chrome', **executable_path, headless=False)
+
     hemi_url = "https://marshemispheres.com/"
     browser.visit(hemi_url)
     hemisphere_image_urls = []
